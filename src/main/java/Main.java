@@ -3,6 +3,10 @@ package main.java;
 import java.io.File;
 import java.util.ArrayList;
 
+import main.java.api.Stream;
+import main.java.api.TwitchAPIv1;
+import main.java.gui.Gui;
+
 /*
  * TODO:
  * Authenticate w/ Twitch API
@@ -18,19 +22,19 @@ public class Main {
 	public static String quality = "Low";
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println("asdf");
-		TwitchAPIv1.requestToken(streamer);
-		File file = TwitchAPIv1.requestStreams();
-		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(file);
-		
-		for (Stream stream: streams) {
-			String streamQuality = stream.getStreamQuality();
-			if (streamQuality.equals(quality)) {
-				Runtime rt = Runtime.getRuntime();
-				@SuppressWarnings("unused")
-				Process pr = rt.exec("C:\\Users\\pjsch_000\\Desktop\\vlc-2.1.5\\vlc.exe " + stream.getStreamURL().toString());
-			}
-		}
+		Gui.createGui();
+//		TwitchAPIv1.requestToken(streamer);
+//		File file = TwitchAPIv1.requestStreams();
+//		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(file);
+//		
+//		for (Stream stream: streams) {
+//			String streamQuality = stream.getStreamQuality();
+//			if (streamQuality.equals(quality)) {
+//				Runtime rt = Runtime.getRuntime();
+//				@SuppressWarnings("unused")
+//				Process pr = rt.exec("C:\\Users\\pjsch_000\\Desktop\\vlc-2.1.5\\vlc.exe " + stream.getStreamURL().toString());
+//			}
+//		}
 	}
 	
 }
