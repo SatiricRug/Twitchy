@@ -81,7 +81,7 @@ public class TwitchAPIv1 {
 	 * Generates a list of streams from the given file 
 	 * @param file File containing the list of streams sent from the API
 	 * @return Returns an <code>ArrayList</code> of <code>Stream</code> objects found from
-	 * the 
+	 * the given file
 	 * @throws FileNotFoundException
 	 * @throws MalformedURLException
 	 */
