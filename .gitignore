@@ -12,6 +12,5 @@ gradle-app.setting
 .classpath
 .project
 
-twitchy.iml
 twitchy.ipr
 twitchy.iws

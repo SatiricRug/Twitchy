@@ -1,11 +1,9 @@
-package main.java;
-
 import java.io.File;
 import java.util.ArrayList;
 
-import main.java.api.Stream;
-import main.java.api.TwitchAPIv1;
-import main.java.gui.Gui;
+//import api.Stream;
+//import api.TwitchAPIv1;
+import gui.Gui;
 
 /*
  * TODO:
@@ -23,7 +21,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		Gui.createGui();
-//		TwitchAPIv1.requestToken(streamer);
+		TwitchAPIv1.requestToken(streamer);
 //		File file = TwitchAPIv1.requestStreams();
 //		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(file);
 //		
