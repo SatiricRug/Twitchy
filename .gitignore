@@ -1,0 +1,17 @@
+*.class
+*.jar
+*.war
+*.ear
+
+.gradle
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+.classpath
+.project
+
+twitchy.iml
+twitchy.ipr
+twitchy.ips
