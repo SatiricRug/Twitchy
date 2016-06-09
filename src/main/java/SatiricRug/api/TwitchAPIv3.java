@@ -1,4 +1,4 @@
-package api;
+package SatiricRug.api;
 
 import java.awt.Desktop;
 import java.io.FileReader;

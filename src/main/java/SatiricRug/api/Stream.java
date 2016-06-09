@@ -1,4 +1,4 @@
-package main.java.api;
+package SatiricRug.api;
 
 import java.net.URL;
 

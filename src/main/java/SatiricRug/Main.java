@@ -1,9 +1,11 @@
-import java.io.File;
-import java.util.ArrayList;
+package SatiricRug;
 
-//import api.Stream;
-//import api.TwitchAPIv1;
-import gui.Gui;
+import SatiricRug.api.Stream;
+import SatiricRug.api.TwitchAPIv1;
+import SatiricRug.gui.Gui;
+
+import java.io.InputStream;
+import java.util.ArrayList;
 
 /*
  * TODO:
@@ -16,15 +18,17 @@ import gui.Gui;
 
 public class Main {
 	
-	public static String streamer = "food";
+	public static String streamer = "wyld";
 	public static String quality = "Low";
 	
 	public static void main(String[] args) throws Exception {
 		Gui.createGui();
 		TwitchAPIv1.requestToken(streamer);
-//		File file = TwitchAPIv1.requestStreams();
-//		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(file);
-//		
+		InputStream streamsStream = TwitchAPIv1.requestStreams();
+//		System.out.println(file.getAbsolutePath());
+		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(streamsStream);
+//		System.out.println(streams.get(0).getStreamURL().toString());
+//
 //		for (Stream stream: streams) {
 //			String streamQuality = stream.getStreamQuality();
 //			if (streamQuality.equals(quality)) {

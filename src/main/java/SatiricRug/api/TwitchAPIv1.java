@@ -1,4 +1,8 @@
-package main.java.api;
+package SatiricRug.api;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,17 +14,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
-
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
 public class TwitchAPIv1 {
 	
 	private static String streamerName;
 	
-	private static final String STREAM_LIST = "/src/main/resources/streams.txt";
+	private static final String STREAM_LIST = "src/main/resources/SatiricRug/streams.txt";
 	
 	private static String token = null;
 	private static String sig = null;
@@ -52,11 +50,11 @@ public class TwitchAPIv1 {
 	}
 	
 	/**
-	 * Gets a file containing information on the streams of the specified streamer.
-	 * @return the file of streams
+	 * Gets information on the streams of the specified streamer.
+	 * @return an InputStream of the API response
 	 * @throws IOException
 	 */
-	public static File requestStreams() throws IOException {
+	public static InputStream requestStreams() throws IOException {
 		// Checks to see if requestToken(streamer) has been run
 		if (token == null) {
 			throw new NullPointerException("Token null; requestToken(streamer) "
@@ -71,10 +69,10 @@ public class TwitchAPIv1 {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		File file = new File(new File(STREAM_LIST).getAbsolutePath());
-		FileUtils.copyURLToFile(requestStreamsURL, file, 15000, 15000); //
+
+		InputStream streamsStream = requestStreamsURL.openStream();
 		
-		return file;
+		return streamsStream;
 	}
 	
 	/**
@@ -85,8 +83,8 @@ public class TwitchAPIv1 {
 	 * @throws FileNotFoundException
 	 * @throws MalformedURLException
 	 */
-	public static ArrayList<Stream> parseStreamsList(File file) throws FileNotFoundException, MalformedURLException {
-		Scanner scanner = new Scanner(file);
+	public static ArrayList<Stream> parseStreamsList(InputStream streamsStream) throws FileNotFoundException, MalformedURLException {
+		Scanner scanner = new Scanner(streamsStream);
 		scanner.useDelimiter("\\n|=|,|\"");
 		ArrayList<Stream> streams = new ArrayList<Stream>();
 		String streamQuality = null, streamBandwidth = null, streamResolution = null;

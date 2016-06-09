@@ -1,0 +1,20 @@
+#EXTM3U
+#EXT-X-TWITCH-INFO:NODE="video-edge-7e8fbc.sea01",MANIFEST-NODE="video-edge-7e8fbc.sea01",SERVER-TIME="1465437734.39",USER-IP="97.113.16.79",CLUSTER="sea01",BROADCAST-ID="21749623120",STREAM-TIME="21080.393687",MANIFEST-CLUSTER="sea01"
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="chunked",NAME="Source",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3740000,RESOLUTION=1280x720,CODECS="avc1.640020,mp4a.40.2",VIDEO="chunked"
+http://video-edge-7e8fbc.sea01.hls.ttvnw.net/hls-8bca40/wyld_21749623120_466554041/chunked/index-live.m3u8?token=id=7946330738027239392,bid=21749623120,exp=1465524134,node=video-edge-7e8fbc-1.sea01.hls.justin.tv,nname=video-edge-7e8fbc.sea01,fmt=chunked&sig=28b9232494f67569f7e35086082847c598afccb5
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="high",NAME="High",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1760000,RESOLUTION=1280x720,CODECS="avc1.66.31,mp4a.40.2",VIDEO="high"
+http://video-edge-7e8fbc.sea01.hls.ttvnw.net/hls-8bca40/wyld_21749623120_466554041/high/index-live.m3u8?token=id=7946330738027239392,bid=21749623120,exp=1465524134,node=video-edge-7e8fbc-1.sea01.hls.justin.tv,nname=video-edge-7e8fbc.sea01,fmt=high&sig=43764056c2299bc1e34248681b8f8b82f4138d89
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="medium",NAME="Medium",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=928000,RESOLUTION=852x480,CODECS="avc1.66.31,mp4a.40.2",VIDEO="medium"
+http://video-edge-7e8fbc.sea01.hls.ttvnw.net/hls-8bca40/wyld_21749623120_466554041/medium/index-live.m3u8?token=id=7946330738027239392,bid=21749623120,exp=1465524134,node=video-edge-7e8fbc-1.sea01.hls.justin.tv,nname=video-edge-7e8fbc.sea01,fmt=medium&sig=dd0302fceae50f59abc8662f44c8e46e708322f7
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="low",NAME="Low",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=596000,RESOLUTION=640x360,CODECS="avc1.66.31,mp4a.40.2",VIDEO="low"
+http://video-edge-7e8fbc.sea01.hls.ttvnw.net/hls-8bca40/wyld_21749623120_466554041/low/index-live.m3u8?token=id=7946330738027239392,bid=21749623120,exp=1465524134,node=video-edge-7e8fbc-1.sea01.hls.justin.tv,nname=video-edge-7e8fbc.sea01,fmt=low&sig=c51047120b5c7bb1173b6acc1721093076fb7914
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="mobile",NAME="Mobile",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=164000,RESOLUTION=400x226,CODECS="avc1.66.31,mp4a.40.2",VIDEO="mobile"
+http://video-edge-7e8fbc.sea01.hls.ttvnw.net/hls-8bca40/wyld_21749623120_466554041/mobile/index-live.m3u8?token=id=7946330738027239392,bid=21749623120,exp=1465524134,node=video-edge-7e8fbc-1.sea01.hls.justin.tv,nname=video-edge-7e8fbc.sea01,fmt=mobile&sig=523b1e512dd75f1221038435217c81956b012eed
+#EXT-X-MEDIA:TYPE=VIDEO,GROUP-ID="audio_only",NAME="Audio Only",AUTOSELECT=NO,DEFAULT=NO
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=128000,CODECS="mp4a.40.2",VIDEO="audio_only"
+http://video-edge-7e8fbc.sea01.hls.ttvnw.net/hls-8bca40/wyld_21749623120_466554041/audio_only/index-live.m3u8?token=id=7946330738027239392,bid=21749623120,exp=1465524134,node=video-edge-7e8fbc-1.sea01.hls.justin.tv,nname=video-edge-7e8fbc.sea01,fmt=audio_only&sig=0c58b1c1efc3341201d713ed5dc68618922dbecd

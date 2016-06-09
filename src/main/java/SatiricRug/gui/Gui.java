@@ -1,16 +1,9 @@
-package gui;
+package SatiricRug.gui;
 
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 public class Gui {
 	
@@ -58,7 +51,9 @@ public class Gui {
 		enterStreamQuality = new JTextField(15);
 		enterStreamQuality.setLocation(10, 145);
 		enterStreamQuality.setSize(enterStreamQuality.getPreferredSize());
-		System.out.println(enterStreamQuality.getPreferredSize().getWidth());
+
+
+
 		panel.add(labelStreamerName);
 		panel.add(enterStreamerName);
 		panel.add(labelStreamQuality);
