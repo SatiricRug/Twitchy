@@ -2,7 +2,7 @@ package SatiricRug;
 
 import SatiricRug.api.Stream;
 import SatiricRug.api.TwitchAPIv1;
-import SatiricRug.gui.Gui;
+import SatiricRug.gui.InputStreamerGui;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class Main {
 	public static String quality = "Low";
 	
 	public static void main(String[] args) throws Exception {
-		Gui.createGui();
+		InputStreamerGui.createGui();
 		TwitchAPIv1.requestToken(streamer);
 		InputStream streamsStream = TwitchAPIv1.requestStreams();
 //		System.out.println(file.getAbsolutePath());
