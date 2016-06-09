@@ -4,7 +4,6 @@
 *.ear
 
 .gradle
-.idea
 build/
 gradle-app.setting
 !gradle-wrapper.jar
@@ -13,5 +12,7 @@ gradle-app.setting
 .classpath
 .project
 
+*.iws
 twitchy.ipr
-twitchy.iws
+workspace.xml
+tasks.xml
