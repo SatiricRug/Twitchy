@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.apache.commons.io.IOUtils;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -77,7 +76,7 @@ public class TwitchAPIv1 {
 	
 	/**
 	 * Generates a list of streams from the given file 
-	 * @param file File containing the list of streams sent from the API
+	 * @param streamsStream InputStream containing the list of streams sent from the API
 	 * @return Returns an <code>ArrayList</code> of <code>Stream</code> objects found from
 	 * the given file
 	 * @throws FileNotFoundException

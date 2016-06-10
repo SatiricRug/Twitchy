@@ -1,7 +1,11 @@
 package SatiricRug.api;
 
-import java.awt.Desktop;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.awt.*;
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
@@ -45,6 +49,34 @@ public class TwitchAPIv3 {
 			headers.add(connection.getHeaderFieldKey(i) + connection.getHeaderField(i));
 		}
 		System.out.println(connection.getURL());
+	}
+
+	/**
+	 * Determines if the specified channel exists or not
+     */
+	public static boolean doesExist(String channel) throws IOException {
+		URL url = new URL("https://api.twitch.tv/kraken/channels/" + channel);
+		String json = url.openConnection().getInputStream().toString();
+		JsonObject jsonParser = new JsonParser().parse(json).getAsJsonObject();
+		if (jsonParser.has("mature")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Determines if the specified channel is streaming or not
+     */
+	public static boolean isStreaming(String channel) throws IOException {
+		URL url = new URL("https://api.twitch.tv/kraken/streams/" + channel);
+		String json = url.openConnection().getInputStream().toString();
+		JsonObject jsonParser = new JsonParser().parse(json).getAsJsonObject();
+		if (jsonParser.get("stream") != null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 }

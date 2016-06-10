@@ -15,7 +15,8 @@ dependencies {
 	compile 'com.google.code.gson:gson:2.6.2'
 	compile 'commons-io:commons-io:2.4'
 
-    compile files('lib/forms_rt.jar')
+    compile files('./lib/jxbrowser-6.5.jar')
+    compile fileTree(dir: 'lib', include: ['*.jar'])
 
     testCompile 'junit:junit:4.12'
 }
