@@ -1,4 +1,5 @@
 package SatiricRug;
+
 /*
  * TODO:
  * Authenticate w/ Twitch API
@@ -8,14 +9,16 @@ package SatiricRug;
  * output chat
  */
 
+import SatiricRug.gui.Gui;
+
 public class Main {
 	
 	public static String streamer = "wyld";
 	public static String quality = "Low";
 	
 	public static void main(String[] args) throws Exception {
-//		Gui.createStreamerNameGui();
-//
+		Gui.main(args);
+//		GuiOld.createStreamerNameGui();
 //		TwitchAPIv1.requestToken(streamer);
 //		InputStream streamsStream = TwitchAPIv1.requestStreams();
 //		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(streamsStream);
