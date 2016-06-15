@@ -1,5 +1,7 @@
 package SatiricRug.gui;
 
+import SatiricRug.io.Browser;
+import SatiricRug.io.TwitchStreamServer;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -49,12 +52,19 @@ public class Gui extends Application {
         goButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //WORKING HERE - get file path of twitchStream.html
-                File twitchStream = new File(System.getProperty("user.dir"));
-                System.out.println(twitchStream.getAbsolutePath());
-//                scene = new Scene(new Browser(),854,480, Color.web("#666970"));
-//                stage.setScene(scene);
-//                stage.show();
+                ClassLoader classLoader = getClass().getClassLoader();
+                File twitchStreamFile = new File(classLoader.getResource("twitchStream.html").getFile());
+                System.out.println(twitchStreamFile.getAbsolutePath());
+                String channel = streamerTextField.getText();
+                try {
+                    TwitchStreamServer.start(channel);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                Browser browser = new Browser("http://localhost:7070");
+                scene = new Scene(browser, 900, 500, Color.web("#666970")); // + "?channel=" + streamerTextField.getText()
+                stage.setScene(scene);
+                stage.show();
             }
         });
 

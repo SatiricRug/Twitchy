@@ -1,6 +1,6 @@
 package SatiricRug.gui;
 
-import SatiricRug.api.TwitchAPIv3;
+import SatiricRug.io.TwitchAPIv3;
 
 import javax.swing.*;
 import java.awt.*;

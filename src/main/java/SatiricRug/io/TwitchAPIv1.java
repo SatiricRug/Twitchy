@@ -1,4 +1,4 @@
-package SatiricRug.api;
+package SatiricRug.io;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

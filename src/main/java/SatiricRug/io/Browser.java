@@ -1,4 +1,4 @@
-package SatiricRug.gui;
+package SatiricRug.io;
 
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -9,7 +9,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
-class Browser extends Region {
+public class Browser extends Region {
 
     final WebView browser = new WebView();
     final WebEngine webEngine = browser.getEngine();
@@ -22,6 +22,11 @@ class Browser extends Region {
         getChildren().add(browser);
 
     }
+
+    public void executeScript(String script) {
+        webEngine.executeScript(script);
+    }
+
     private Node createSpacer() {
         Region spacer = new Region();
         HBox.setHgrow(spacer, Priority.ALWAYS);
