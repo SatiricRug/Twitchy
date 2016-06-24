@@ -3,6 +3,7 @@ package SatiricRug.gui;
 import SatiricRug.io.Browser;
 import SatiricRug.io.TwitchStreamServer;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -18,12 +19,21 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
 
 public class Gui extends Application {
+
+    private static final Logger log = LoggerFactory.getLogger(Gui.class);
+
     private Scene scene;
+
+    private int defaultPort = 7070;
+
     @Override public void start(Stage stage) {
         stage.setTitle("Twitchy");
 
@@ -54,17 +64,29 @@ public class Gui extends Application {
             public void handle(ActionEvent event) {
                 ClassLoader classLoader = getClass().getClassLoader();
                 File twitchStreamFile = new File(classLoader.getResource("twitchStream.html").getFile());
-                System.out.println(twitchStreamFile.getAbsolutePath());
                 String channel = streamerTextField.getText();
+                log.debug("Showing channel \"{}\"", channel);
+
+                //start the server
+                TwitchStreamServer server = new TwitchStreamServer(channel, defaultPort);
                 try {
-                    TwitchStreamServer.start(channel);
+ //                   server.start();
                 } catch (Exception e) {
+                    log.error("Unable to stop server");
                     e.printStackTrace();
                 }
-                Browser browser = new Browser("http://localhost:7070");
-                scene = new Scene(browser, 900, 500, Color.web("#666970")); // + "?channel=" + streamerTextField.getText()
+                Browser browser = new Browser("http://localhost:" + server.getPort());
+                scene = new Scene(browser, 1300, 1000, Color.web("#666970")); // + "?channel=" + streamerTextField.getText()
                 stage.setScene(scene);
                 stage.show();
+            }
+        });
+
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent t) {
+                Platform.exit();
+                System.exit(0);
             }
         });
 

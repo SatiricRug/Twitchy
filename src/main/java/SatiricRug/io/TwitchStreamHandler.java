@@ -31,10 +31,9 @@ public class TwitchStreamHandler extends AbstractHandler {
         String nextLine;
         while (scanner.hasNext()) {
             nextLine = scanner.nextLine();
-            if (nextLine.contains("channel:")) {
-                nextLine = nextLine + " " + channel;
+            if (nextLine.contains("src=")) {
+                nextLine = nextLine + channel + "\"";
             }
-            System.out.println(nextLine);
             response.getWriter().println(nextLine);
         }
         scanner.close();

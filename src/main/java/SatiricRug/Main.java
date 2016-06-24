@@ -2,23 +2,26 @@ package SatiricRug;
 
 /*
  * TODO:
- * Authenticate w/ Twitch API
- * Access followed streamers that are currently streaming
- * Input streamer and stream quality
- * output stream
- * output chat
+ * Stream loading, but not loading - fix fia https?
  */
 
-import SatiricRug.gui.Gui;
+import SatiricRug.gui.StreamGui;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main {
-	
+
+	private static final Logger log = LoggerFactory.getLogger(Main.class);
+
 	public static String streamer = "wyld";
 	public static String quality = "Low";
 	
 	public static void main(String[] args) throws Exception {
-		Gui.main(args);
-//		GuiOld.createStreamerNameGui();
+		StreamGui asdf = new StreamGui();
+
+//		Gui.main(args);
+
+// 		GuiOld.createStreamerNameGui();
 //		TwitchAPIv1.requestToken(streamer);
 //		InputStream streamsStream = TwitchAPIv1.requestStreams();
 //		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(streamsStream);
