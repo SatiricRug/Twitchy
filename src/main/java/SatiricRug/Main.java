@@ -5,27 +5,34 @@ package SatiricRug;
  * Stream loading, but not loading - fix fia https?
  */
 
-import SatiricRug.gui.StreamGui;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Main {
+public class Main extends Application {
 
 	private static final Logger log = LoggerFactory.getLogger(Main.class);
 
-	public static String streamer = "wyld";
-	public static String quality = "Low";
-	
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("../../../resources/main/SatiricRug/gui/choose_stream.fxml"));
+        primaryStage.setTitle("Twitch");
+        primaryStage.setScene(new Scene(root, 400, 275));
+        primaryStage.show();
+    }
+
 	public static void main(String[] args) throws Exception {
-		StreamGui asdf = new StreamGui();
 
-//		Gui.main(args);
+        launch(args);
 
-// 		GuiOld.createStreamerNameGui();
 //		TwitchAPIv1.requestToken(streamer);
 //		InputStream streamsStream = TwitchAPIv1.requestStreams();
 //		ArrayList<Stream> streams = TwitchAPIv1.parseStreamsList(streamsStream);
-
+//
 //		System.out.println(streams.get(0).getStreamURL().toString());
 //
 //		for (Stream stream: streams) {
